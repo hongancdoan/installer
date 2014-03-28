@@ -1,4 +1,3 @@
-
 Magnet Mobile App Builder Installer
 ===================================
 
@@ -42,10 +41,14 @@ brew info mab
 ```
 This will identify all potentials caveats on your system. 
 
-Also, be sure the mysql is running, if you installed it with brew, you can verify it is running with:
+Also, be sure the mysql is running, if you installed it with brew, you can verify whether it is running with:
 
 ```
 mysql.server status
+```
+and start it with:
+```
+mysql.server start
 ```
 
 To install future versions of mab, but keep the old version
