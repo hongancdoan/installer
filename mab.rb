@@ -214,10 +214,8 @@ class Mab < Formula
 
 
   def caveats 
-    (check_java ? check_java : "") + (check_java_home ? check_java_home : "") + (check_maven ? check_maven : ""))
+    (check_java ? check_java : "") + (check_java_home ? check_java_home : "") + (check_maven ? check_maven : "")
   end 
 
-  test do
-  end
 
 end
