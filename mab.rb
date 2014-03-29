@@ -1,7 +1,6 @@
 require "formula"
 
 JAVA_MIN_PATCH = 45
-
 JAVA_MIN_VERSION = "1.7.0_" + JAVA_MIN_PATCH.to_s
 
 def error_no_java
