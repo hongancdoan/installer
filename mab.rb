@@ -1,6 +1,7 @@
 require "formula"
 
-JAVA_MIN_VERSION = "1.7.0_51"
+JAVA_MIN_VERSION = "1.7.0_" + JAVA_MIN_PATCH
+JAVA_MIN_PATCH
 
 def error_no_java
   "ERROR: No Java executable found on PATH\n"
@@ -80,7 +81,7 @@ def check_java
   
   version = /[0-9]+\.[0-9]+\.[\.0-9_]+/.match(`#{java} -version 2>&1| grep "java version"`).to_s
   version_numbers = version.split('.')
-  if (version_numbers[1].to_i < 7) or (version_numbers[2].split('_')[1].to_i < 51)
+  if (version_numbers[1].to_i < 7) or (version_numbers[2].split('_')[1].to_i < JAVA_MIN_PATCH)
     return error_invalid_java_version(version)
   end
 
