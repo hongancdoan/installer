@@ -49,8 +49,9 @@ end
 
 def error_no_java_home
 """
-WARNING: You have not set a JAVA_HOME environment variable. 
-  It is recommended that you set it in order to ensure proper Maven behavior.
+ERROR: You have not set a JAVA_HOME environment variable. 
+  It must point to a valid java installation home. For instance, run:
+  export JAVA_HOME=\"$(/usr/libexec/java_home)\"  
 """
 end
 
@@ -71,6 +72,13 @@ ERROR: Java executables mismatch.
 """
 end
 
+def error_incorrect_mab(mab_path)
+"""
+ERROR: mab executables conflicting on PATH.
+  It appears that you already have a mab executable on your PATH: #{mab_path}. 
+  Ensure that /usr/local/bin/mab is in front of PATH to use the installed mab.   
+"""
+end
 
 def check_java
   
@@ -111,6 +119,13 @@ def check_java_home
   nil
 end
 
+def check_mab
+ mab = which 'mab'
+ if mab != '/usr/local/bin/mab'
+   return error_incorrect_mab(mab)
+ end
+ nil
+end
 
 def check_maven
   mvn = which 'mvn'
@@ -158,7 +173,8 @@ class JavaDependency < Requirement
   end
 
   satisfy :build_env => false do
-    not (@error = check_java)
+    @error = (check_java ? check_java : "") + (check_java_home ? check_java_home : "") 
+    not (@error != "") 
   end
 
 end
@@ -215,7 +231,14 @@ class Mab < Formula
 
 
   def caveats 
-    (check_java ? check_java : "") + (check_java_home ? check_java_home : "") + (check_maven ? check_maven : "")
+    issues = (check_java ? check_java : "") + (check_java_home ? check_java_home : "") + (check_maven ? check_maven : "") + (check_mab ? check_mab : "")
+    if (issues == "") 
+      return """NO CAVEATS. INSTALLATION SUCCESSFUL!
+  Congratulations! The Mobile App Builder has been installed under /usr/local/bin/mab.
+  To uninstall it, run 'brew remove mab'.
+"""
+    end 
+    return issues
   end 
 
 
