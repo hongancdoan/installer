@@ -75,7 +75,7 @@ end
 def error_incorrect_mab(mab_path)
 """
 ERROR: mab executables conflicting on PATH.
-  It appears that you already have a mab executable on your PATH: #{mab_path}. 
+  It appears that you already have a mab executable on your PATH: #{mab_path} 
   Ensure that /usr/local/bin/mab is in front of PATH to use the installed mab.   
 """
 end
@@ -121,7 +121,7 @@ end
 
 def check_mab
  mab = which 'mab'
- if mab != '/usr/local/bin/mab'
+ if mab 
    return error_incorrect_mab(mab)
  end
  nil
