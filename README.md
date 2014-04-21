@@ -27,11 +27,6 @@ Run:
 brew install https://raw.githubusercontent.com/etexier/installer/master/mab.rb
 ```
 
-To install the development version:
-```
-brew install https://raw.githubusercontent.com/etexier/installer/master/mab.rb --devel
-```
-
 If you don't have _brew_, go to: http://brew.sh/
 
 You can verify your installation by running:
@@ -56,7 +51,7 @@ brew unlink mab
 brew install https://raw.githubusercontent.com/etexier/installer/master/mab.rb
 ```
 
-Then you can switch version the following way:
+Then you can switch version the following way (if you already have previous version):
 ```
 brew switch mab <version>
 ```
