@@ -209,7 +209,7 @@ end
 class Mab < Formula
   homepage 'http://factory.magnet.com'
   url "https://github.com/etexier/installer/raw/master/magnet-tools-cli-installer-1.1.7.tgz"
-  sha1 '8e02d7b75079b667404ca6eae408fd87b43ff03c'
+  sha1 'b7eecec966a576e0ad64694d2ef130a815ad0804'
 
 #  devel do 
 #    version '1.1.6'
