@@ -3,12 +3,11 @@ Magnet Mobile App Builder Installer
 
 Version
 -------
- - Stable: 1.1.6
- - Development: 1.1.7-SNAPSHOT
+ - Stable: 1.1.7
 
 Requirements
 ------------
-  - Java 1.7.0_51 or above
+  - Java 1.7.0_45 or above
   - MySql 5.5 or above
   - Maven 3.1.1 or above
 
