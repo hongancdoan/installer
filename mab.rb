@@ -61,6 +61,7 @@ def error_maven_home_mismatch(maven_on_maven_home, maven_path)
 ERROR: Maven executables mismatch.
   M2_HOME points to #{maven_on_maven_home} which is different from the 
   Maven executable on the PATH: #{maven_path} 
+  You can fix it with this command: export PATH=$M2_HOME/bin:$PATH
 """
 end
 
@@ -69,6 +70,7 @@ def error_java_home_mismatch(java_on_java_home, java_path)
 ERROR: Java executables mismatch.
   JAVA_HOME points to #{java_on_java_home} which is different from the 
   Java executable on the PATH #{java_path} 
+  You can fix it with this command: export PATH=$JAVA_HOME/bin:$PATH
 """
 end
 
