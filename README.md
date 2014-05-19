@@ -3,11 +3,7 @@ Magnet Mobile App Builder Installer
 
 Version
 -------
-<<<<<<< HEAD
  - Stable: 2.3.0_M5.1
-=======
- - Stable: 2.3.0_M4
->>>>>>> update readme for 2.3.0_M4
 
 Requirements
 ------------
