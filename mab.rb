@@ -210,8 +210,8 @@ end
 #
 class Mab < Formula
   homepage 'http://factory.magnet.com'
-  url "https://raw.githubusercontent.com/etexier/installer/master/magnet-tools-cli-installer-2.3.0_M4.tgz"
-  sha1 '57ce9563ce151a734d11b4ebdaad54b15c56a85d'
+  url "https://raw.githubusercontent.com/etexier/installer/master/magnet-tools-cli-installer-2.3.0_M5.1.tgz"
+  sha1 '2e1b89cfbeeab537ce97b4369edc3da24f8d8a6f'
 
   option 'without-mysql', 'MySQL will not be installed'
   option 'without-maven' , 'Maven will not be installed'
